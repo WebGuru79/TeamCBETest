@@ -1,0 +1,17 @@
+﻿@model UCT.ViewModels.VersionViewModel
+
+@{
+    ViewBag.Title = "CreateVersion";
+}
+
+<h2>CreateVersion</h2>
+
+@if (Model.UserPrograms.Count() > 0)
+{
+<table>
+    <tr>
+        <td>Select Program:</td>
+        <td>@Html.DropDownListFor(x => x.ProgramID, new SelectList(Model.UserPrograms, "ProgramID", "Description", Model.ProgramID))</td>
+    </tr>
+</table>
+}
