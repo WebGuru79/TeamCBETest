@@ -599,6 +599,5 @@ C:\Users\Roop\Documents\GitHub\TeamCBETest\UCT\bin\ko\System.Spatial.resources.d
 C:\Users\Roop\Documents\GitHub\TeamCBETest\UCT\bin\ru\System.Spatial.resources.dll
 C:\Users\Roop\Documents\GitHub\TeamCBETest\UCT\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Roop\Documents\GitHub\TeamCBETest\UCT\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Roop\Documents\GitHub\TeamCBETest\UCT\obj\Debug\UCT.csprojResolveAssemblyReference.cache
 C:\Users\Roop\Documents\GitHub\TeamCBETest\UCT\obj\Debug\UCT.dll
 C:\Users\Roop\Documents\GitHub\TeamCBETest\UCT\obj\Debug\UCT.pdb
