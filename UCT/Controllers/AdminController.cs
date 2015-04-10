@@ -3,22 +3,40 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 using UCT.Models;
+using UCT.ViewModels;
+
 
 namespace UCT.Controllers
 {
-    public class AdminController : Controller
+    public class AdminController : BaseController
     {
         private UsersContext db = new UsersContext();
-
+         IUCTRepository _repository;
+         IPrincipal _user;
+         public AdminController() : this(new EFUCTRepository(System.Web.HttpContext.Current.User), System.Web.HttpContext.Current.User) { }
+     
+        public AdminController(IUCTRepository repository, IPrincipal user) : base(repository)
+        {
+            _repository = repository;
+            _user = user;
+        }
+        
         //
         // GET: /Admin/
 
         public ActionResult Index()
         {
-            return View(db.UserProfiles.ToList());
+           UserProfileViewModel  viewModel = new UserProfileViewModel();
+
+            viewModel.UserProfiles = _repository.GetUsers();
+            viewModel.UserPrograms = _repository.GetAllPrograms();
+            
+         
+            return View("Index", viewModel);
         }
 
         //

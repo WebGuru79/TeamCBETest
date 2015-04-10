@@ -204,6 +204,7 @@
     <Compile Include="Controllers\LearningActivitiesController.cs" />
     <Compile Include="Controllers\ProgramController.cs" />
     <Compile Include="Controllers\ProgramUserController.cs" />
+    <Compile Include="Controllers\VersionController.cs" />
     <Compile Include="DAL\UCTContext.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -215,18 +216,57 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ArchiveModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArchiveModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArchiveModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArchiveModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArchiveModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArchiveModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Competencies_Archive.cs">
+      <DependentUpon>ArchiveModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Competencies_LearningActivities_Archive.cs">
+      <DependentUpon>ArchiveModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CompetencyType.cs" />
     <Compile Include="Models\Descriptor.cs" />
+    <Compile Include="Models\Descriptors_Archive.cs">
+      <DependentUpon>ArchiveModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EFUCTRepository.cs" />
+    <Compile Include="Models\ExcelArcReportGenerator.cs" />
     <Compile Include="Models\IUCTRepository.cs" />
+    <Compile Include="Models\LearningActivities_Archive.cs">
+      <DependentUpon>ArchiveModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LearningGoal.cs" />
     <Compile Include="Models\Competency.cs" />
     <Compile Include="Models\LearningActivity.cs" />
+    <Compile Include="Models\LearningGoals_Archive.cs">
+      <DependentUpon>ArchiveModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\CompetencyLearningActivity.cs" />
+    <Compile Include="Models\Programs_Archive.cs">
+      <DependentUpon>ArchiveModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ProgramUser.cs" />
     <Compile Include="Models\ExcelReportGenerator.cs" />
-    <Compile Include="Models\Version.cs" />
+    <Compile Include="Models\ProgramUsers_Archive.cs">
+      <DependentUpon>ArchiveModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Version.cs">
+      <DependentUpon>ArchiveModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\WordReportGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CompetencyLearningActivitiesViewModel.cs" />
@@ -238,6 +278,9 @@
     <Compile Include="ViewModels\CreateDescriptorFormViewModel.cs" />
     <Compile Include="ViewModels\CreateCompetencyFormViewModel.cs" />
     <Compile Include="ViewModels\ProgramUserViewModel.cs" />
+    <Compile Include="ViewModels\ProgramViewModel.cs" />
+    <Compile Include="ViewModels\UserProfileViewModel.cs" />
+    <Compile Include="ViewModels\VersionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -297,6 +340,23 @@
     <Content Include="Error\403.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\ArchiveModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ArchiveModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ArchiveModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ArchiveModel.edmx</DependentUpon>
+      <LastGenOutput>ArchiveModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ArchiveModel.edmx.diagram">
+      <DependentUpon>ArchiveModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ArchiveModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ArchiveModel.edmx</DependentUpon>
+      <LastGenOutput>ArchiveModel.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\LocalServer UCT.pubxml" />
     <None Include="Properties\PublishProfiles\uct.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
@@ -398,7 +458,7 @@
     <Content Include="Views\SchoolCompetency\_LearningGoalCreate.cshtml" />
     <Content Include="Views\SchoolCompetency\_LearningGoalEdit.cshtml" />
     <Content Include="Views\SchoolCompetency\Index.cshtml" />
-    <Content Include="Views\Program\CreateVersion.cshtml" />
+    <Content Include="Views\Version\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

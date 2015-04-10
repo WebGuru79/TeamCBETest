@@ -9,14 +9,14 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using UCT.Models;
-using UCT.ViewModels ;
+using UCT.ViewModels;
 using WebMatrix.WebData;
 using UCT.Filters;
 using System.Security.Principal;
 
 namespace UCT.Controllers
 {
-    [InitializeSimpleMembership]
+   // [InitializeSimpleMembership]
     public class ProgramController : BaseController
     {
         IUCTRepository _repository;
@@ -34,7 +34,11 @@ namespace UCT.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View(_repository.GetAllPrograms().ToList());
+            var viewModel = new ProgramViewModel();
+            viewModel.programs = _repository.GetAllPrograms().ToList();
+            viewModel.versions = _repository.GetAllVersions().ToList();
+
+            return View("Index", viewModel);
         }
 
         //
@@ -228,15 +232,5 @@ namespace UCT.Controllers
 //               return dt;
 //            }
 //}
-        //
-        // GET: /Program/CreateVersion
-
-        public ActionResult CreateVersion()
-        {
-            return View();
-        }
-
-        //
-        // POST: /Program/CreateVersion
     }
 }

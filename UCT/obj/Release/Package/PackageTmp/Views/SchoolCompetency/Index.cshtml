@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<UCT.Models.LearningGoal>
 
-
 @{
     ViewBag.Title = "Graduate School Competencies";
 }
@@ -8,9 +7,7 @@
 <h2>Graduate School Competencies</h2>
     
 <div>
-    <div style="clear:both;float:left;margin-top:10px;margin-bottom:10px;">
-    </div>
-    <div style="clear:both;float:left;padding-top:10px;">
+    <div style="float:left;padding-top:10px;">
         <a href="#" id="createLearningGoal">Create New Learning Goal</a>
         <a href="#" id="createCompetency">Create New Competency</a>
         <a href="#" id="createDescriptor">Create New Descriptor</a>
@@ -31,6 +28,7 @@
 
         @foreach (var learningGoal in Model)
         {
+         
             <tr>
                 <td class="width30">@Html.DisplayFor(modelItem => learningGoal.LearningGoalNumber)</td>
                 <td colspan="3"><b>@Html.DisplayFor(modelItem => learningGoal.Title)</b>:&nbsp;@Html.DisplayFor(modelItem => learningGoal.Description)</td>
